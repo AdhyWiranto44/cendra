@@ -1,0 +1,392 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-slate-800 flex">
+  <div class="container-fluid w-2/12 lg:w-3/12">
+    <div id="cendra-sidebar" class="pt-4 border-r h-screen border-slate-600 overflow-y-auto flex-col justify-start">
+      <a class="text-2xl mx-4 lg:mx-14 flex items-baseline justify-center lg:justify-start mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" href="#" title="Main">
+        <i class="fa-solid fa-feather-pointed"></i>
+      </a>
+      <a class="text-2xl mx-4 lg:mx-14 flex items-baseline justify-center lg:justify-start mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" href="#" title="Home">
+        <i class="fa-solid fa-house lg:pr-4"></i>
+        <h2 class="text-xl hidden lg:block">Home</h2>
+      </a>
+      <a id="explore" class="text-2xl mx-4 lg:mx-14 flex items-baseline justify-center lg:justify-start mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" href="#" title="Explore">
+        <i class="fa-solid fa-magnifying-glass lg:pr-4"></i>
+        <h2 class="text-xl hidden lg:block">Explore</h2>
+      </a>
+      <a class="text-2xl mx-4 lg:mx-14 flex items-baseline justify-center lg:justify-start mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" href="#" title="Notification">
+        <i class="fa-solid fa-bell lg:pr-4"></i>
+        <h2 class="text-xl hidden lg:block">Notifications</h2>
+      </a>
+      <a class="text-2xl mx-4 lg:mx-14 flex items-baseline justify-center lg:justify-start mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" href="#" title="Messages">
+        <i class="fa-solid fa-envelope lg:pr-4"></i>
+        <h2 class="text-xl hidden lg:block">Messages</h2>
+      </a>
+      <a class="text-2xl mx-4 lg:mx-14 flex items-baseline justify-center lg:justify-start mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" href="#" title="Bookmarks">
+        <i class="fa-solid fa-bookmark lg:pr-4"></i>
+        <h2 class="text-xl hidden lg:block">Bookmarks</h2>
+      </a>
+      <a class="text-2xl mx-4 lg:mx-14 flex items-baseline justify-center lg:justify-start mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" href="#" title="Lists">
+        <i class="fa-solid fa-list lg:pr-4"></i>
+        <h2 class="text-xl hidden lg:block">Lists</h2>
+      </a>
+      <a class="text-2xl mx-4 lg:mx-14 flex items-baseline justify-center lg:justify-start mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" href="#" title="Profile">
+        <i class="fa-solid fa-user-large lg:pr-4"></i>
+        <h2 class="text-xl hidden lg:block">Profile</h2>
+      </a>
+      <a class="text-2xl mx-4 lg:mx-14 flex items-baseline justify-center lg:justify-start mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" href="#" title="More">
+        <i class="fa-solid fa-ellipsis lg:pr-4"></i>
+        <h2 class="text-xl hidden lg:block">More</h2>
+      </a>
+      <button id="tweet-sidebar-button" class="text-2xl mx-auto lg:mx-14 flex items-baseline justify-center lg:justify-start mb-1 duration-300 p-3 bg-sky-500 rounded-full hover:bg-sky-600" href="#" title="Tweet">
+        <i class="fa-solid fa-pencil mx-auto"></i>
+      </button>
+      <a class="mx-auto lg:mx-14 flex mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" href="#" title="More">
+        <div id="user-photo-profile" class="w-14 mx-auto lg:mx-0 lg:mr-3">
+          <img class="rounded-full" src="/src/img/momo.jpg" alt="momo">
+        </div>
+        <div class="flex-col">
+          <p class="font-semibold hidden lg:block">Hirai Momo</p>
+          <p class="hidden lg:block text-gray-400 mr-1">@momo</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="container-fluid h-screen overflow-y-auto w-full sm:w-10/12 lg:w-5/12">
+    <div id="cendra-header" class="bg-slate-800 w-full items-center z-10 sticky top-0">
+      <div id="cendra-title" class="p-4">
+        <h1 class="font-bold text-xl">Home</h1>
+      </div>
+    </div>
+    <div class="border-b border-slate-600 p-4 flex">
+      <div id="user-photo-profile" class="w-14 flex-shrink-0 mr-3">
+        <img class="rounded-full" src="/src/img/momo.jpg" alt="momo">
+      </div>
+      <form id="tweet-component" class="w-full">
+        <textarea class="bg-slate-800 block w-full mb-4 text-white focus:outline-none border-sky-500" type="text" name="tweet" placeholder="What's happening?"></textarea>
+        <button class="block bg-sky-500 duration-300 hover:bg-sky-600 px-4 py-2 rounded-full text-sky-50 font-semibold ml-auto" type="button">Tweet</button>
+      </form>
+    </div>
+    <div id="tweet-list" class="">
+      <div id="tweet-item" class="flex border-b border-slate-600 p-4 mb-2">
+        <div id="user-photo-profile" class="w-14 flex-shrink-0 mr-3">
+          <img class="rounded-full" src="/src/img/dahyun.jpg" alt="dahyun">
+        </div>
+        <div id="tweet-info" class="w-10/12">
+          <div id="user-name" class="flex">
+            <a href="#">
+              <p class="font-semibold hover:underline mr-1">Kim Dahyun</p>
+            </a>
+            <p class="text-gray-400 mr-1">@dahyuneee</p>
+            <p class="text-gray-400">· 1h</p>
+          </div>
+          <div id="tweet-text">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis quidem debitis dolorem repudiandae a pariatur repellat. Vitae fugiat porro sed iusto, officiis id recusandae? Possimus nulla, veniam saepe eos perferendis excepturi expedita quidem totam animi a velit delectus cumque mollitia? Debitis deleniti ipsa incidunt, consequuntur iure itaque dolorem eum iste.</p>
+          </div>
+          <div id="tweet-menu" class="flex-col mt-2">
+            <button><i class="fa-solid fa-comment text-gray-400 duration-300 hover:text-sky-500 p-3 rounded-full hover:bg-slate-700"><span class="font-sans font-normal pl-4">44</span></i></button>
+            <button><i class="fa-solid fa-retweet text-gray-400 duration-300 hover:text-green-500 p-3 rounded-full hover:bg-slate-700"><span class="font-sans font-normal pl-4">456</span></i></button>
+            <button><i class="fa-solid fa-heart text-gray-400 duration-300 hover:text-red-500 p-3 rounded-full hover:bg-slate-700"><span class="font-sans font-normal pl-4">456</span></i></button>
+            <button><i class="fa-solid fa-share-nodes text-gray-400 duration-300 hover:text-sky-500 p-3 rounded-full hover:bg-slate-700"></i></button>
+            <button><i class="fa-solid fa-trash-can text-gray-400 duration-300 hover:text-sky-500 p-3 rounded-full hover:bg-slate-700"></i></button>
+          </div>
+        </div>
+      </div>
+      <div id="tweet-item" class="flex border-b border-slate-600 p-4 mb-2">
+        <div id="user-photo-profile" class="w-14 flex-shrink-0 mr-3">
+          <img class="rounded-full" src="/src/img/mina.jpg" alt="mina">
+        </div>
+        <div id="tweet-info" class="w-10/12">
+          <div id="user-name" class="flex">
+            <a href="#">
+              <p class="font-semibold hover:underline mr-1">Myoui Mina</p>
+            </a>
+            <p class="text-gray-400 mr-1">@mina_sr_my</p>
+            <p class="text-gray-400">· 2h</p>
+          </div>
+          <div id="tweet-text">
+            <p>Lorem ipsum dolor.</p>
+          </div>
+          <div id="tweet-menu" class="flex-col mt-2">
+            <button><i class="fa-solid fa-comment text-gray-400 duration-300 hover:text-sky-500 p-3 rounded-full hover:bg-slate-700"><span class="font-sans font-normal pl-4">44</span></i></button>
+            <button><i class="fa-solid fa-retweet text-gray-400 duration-300 hover:text-green-500 p-3 rounded-full hover:bg-slate-700"><span class="font-sans font-normal pl-4">456</span></i></button>
+            <button><i class="fa-solid fa-heart text-gray-400 duration-300 hover:text-red-500 p-3 rounded-full hover:bg-slate-700"><span class="font-sans font-normal pl-4">456</span></i></button>
+            <button><i class="fa-solid fa-share-nodes text-gray-400 duration-300 hover:text-sky-500 p-3 rounded-full hover:bg-slate-700"></i></button>
+            <button><i class="fa-solid fa-trash-can text-gray-400 duration-300 hover:text-sky-500 p-3 rounded-full hover:bg-slate-700"></i></button>
+          </div>
+        </div>
+      </div>
+      <div id="tweet-item" class="flex border-b border-slate-600 p-4 mb-2">
+        <div id="user-photo-profile" class="w-14 flex-shrink-0 mr-3">
+          <img class="rounded-full" src="/src/img/dahyun.jpg" alt="dahyun">
+        </div>
+        <div id="tweet-info" class="w-10/12">
+          <div id="user-name" class="flex">
+            <a href="#">
+              <p class="font-semibold hover:underline mr-1">Kim Dahyun</p>
+            </a>
+            <p class="text-gray-400 mr-1">@dahyuneee</p>
+            <p class="text-gray-400">· 1h</p>
+          </div>
+          <div id="tweet-text">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis quidem debitis dolorem repudiandae a pariatur repellat. Vitae fugiat porro sed iusto, officiis id recusandae? Possimus nulla, veniam saepe eos perferendis excepturi expedita quidem totam animi a velit delectus cumque mollitia? Debitis deleniti ipsa incidunt, consequuntur iure itaque dolorem eum iste.</p>
+          </div>
+          <div id="tweet-menu" class="flex-col mt-2">
+            <button><i class="fa-solid fa-comment text-gray-400 duration-300 hover:text-sky-500 p-3 rounded-full hover:bg-slate-700"><span class="font-sans font-normal pl-4">44</span></i></button>
+            <button><i class="fa-solid fa-retweet text-gray-400 duration-300 hover:text-green-500 p-3 rounded-full hover:bg-slate-700"><span class="font-sans font-normal pl-4">456</span></i></button>
+            <button><i class="fa-solid fa-heart text-gray-400 duration-300 hover:text-red-500 p-3 rounded-full hover:bg-slate-700"><span class="font-sans font-normal pl-4">456</span></i></button>
+            <button><i class="fa-solid fa-share-nodes text-gray-400 duration-300 hover:text-sky-500 p-3 rounded-full hover:bg-slate-700"></i></button>
+            <button><i class="fa-solid fa-trash-can text-gray-400 duration-300 hover:text-sky-500 p-3 rounded-full hover:bg-slate-700"></i></button>
+          </div>
+        </div>
+      </div>
+      <div id="tweet-item" class="flex p-4 mb-2">
+        <div id="user-photo-profile" class="w-14 flex-shrink-0 mr-3">
+          <img class="rounded-full" src="/src/img/mina.jpg" alt="mina">
+        </div>
+        <div id="tweet-info" class="w-10/12">
+          <div id="user-name" class="flex">
+            <a href="#">
+              <p class="font-semibold hover:underline mr-1">Myoui Mina</p>
+            </a>
+            <p class="text-gray-400 mr-1">@mina_sr_my</p>
+            <p class="text-gray-400">· 2h</p>
+          </div>
+          <div id="tweet-text">
+            <p>Lorem ipsum dolor.</p>
+          </div>
+          <div id="tweet-menu" class="flex-col mt-2">
+            <button><i class="fa-solid fa-comment text-gray-400 duration-300 hover:text-sky-500 p-3 rounded-full hover:bg-slate-700"><span class="font-sans font-normal pl-4">44</span></i></button>
+            <button><i class="fa-solid fa-retweet text-gray-400 duration-300 hover:text-green-500 p-3 rounded-full hover:bg-slate-700"><span class="font-sans font-normal pl-4">456</span></i></button>
+            <button><i class="fa-solid fa-heart text-gray-400 duration-300 hover:text-red-500 p-3 rounded-full hover:bg-slate-700"><span class="font-sans font-normal pl-4">456</span></i></button>
+            <button><i class="fa-solid fa-share-nodes text-gray-400 duration-300 hover:text-sky-500 p-3 rounded-full hover:bg-slate-700"></i></button>
+            <button><i class="fa-solid fa-trash-can text-gray-400 duration-300 hover:text-sky-500 p-3 rounded-full hover:bg-slate-700"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid hidden lg:block lg:w-4/12">
+    <div id="cendra-trends" class="pt-4 border-l h-screen border-slate-600 overflow-y-auto flex-col">
+      <a class="mx-6 flex items-baseline justify-center lg:justify-start mb-4 duration-300 p-4 bg-slate-700 rounded-full" href="#" title="Main">
+        <i class="fa-solid fa-search text-zinc-400 pr-4"></i>
+        <input id="search-button" type="text" class="bg-slate-700 w-full focus:outline-none text-white" placeholder="Search Twitter">
+      </a>
+      <div class="bg-slate-700 pt-4 mx-6 mb-4 rounded-xl">
+        <h2 class="text-xl font-bold mb-4 px-4">Your Trends</h2>
+        <div id="trend-list">
+          <a href="#" id="trend-item" class="block px-4 py-2 duration-300 hover:bg-slate-600">
+            <small class="text-zinc-400">1 · Trending</small>
+            <p class="font-bold">#NINEORNONE</p>
+            <small class="text-zinc-400">180K Tweets</small>
+          </a>
+          <a href="#" id="trend-item" class="block px-4 py-2 duration-300 hover:bg-slate-600">
+            <small class="text-zinc-400">2 · Trending</small>
+            <p class="font-bold">#namjoon</p>
+            <small class="text-zinc-400">180K Tweets</small>
+          </a>
+          <a href="#" id="trend-item" class="block px-4 py-2 duration-300 hover:bg-slate-600">
+            <small class="text-zinc-400">3 · Trending</small>
+            <p class="font-bold">#nayeon_pop</p>
+            <small class="text-zinc-400">180K Tweets</small>
+          </a>
+          <a href="#" id="trend-item" class="block px-4 py-2 duration-300 hover:bg-slate-600">
+            <small class="text-zinc-400">4 · Trending</small>
+            <p class="font-bold">#inyourarea</p>
+            <small class="text-zinc-400">180K Tweets</small>
+          </a>
+          <a href="#" class="flex items-center px-4 py-2 duration-300 hover:bg-slate-600 rounded-b-xl text-sky-500">
+            Show more
+          </a>
+        </div>
+      </div>
+      <div class="bg-slate-700 pt-4 mx-6 rounded-xl mb-4">
+        <h2 class="text-xl font-bold mb-4 px-4">Who to follow</h2>
+        <div id="follow-list">
+          <a href="#" id="follow-item" class="flex items-center px-4 py-2 duration-300 hover:bg-slate-600">
+            <div id="user-photo-profile" class="w-14 flex-shrink-0 mr-3">
+              <img class="rounded-full" src="/src/img/tzuyu.jpg" alt="mina">
+            </div>
+            <div class="user-name">
+              <p class="font-bold">Chou Tzuyu</p>
+              <small class="block text-zinc-400">@thinkaboutzu</small>
+            </div>
+            <div id="follow-button" class="ml-auto">
+              <button class="block font-bold duration-300 bg-white hover:bg-zinc-200 active:bg-zinc-300 px-4 py-1 rounded-full" type="button">Follow</button>
+            </div>
+          </a>
+          <a href="#" id="trend-item" class="flex items-center px-4 py-2 duration-300 hover:bg-slate-600">
+            <div id="user-photo-profile" class="w-14 flex-shrink-0 mr-3">
+              <img class="rounded-full" src="/src/img/nayeon.jpg" alt="mina">
+            </div>
+            <div class="user-name">
+              <p class="font-bold">Im Nayeon</p>
+              <small class="block text-zinc-400">@nayeonyny</small>
+            </div>
+            <div id="follow-button" class="ml-auto">
+              <button class="block font-bold duration-300 bg-white hover:bg-zinc-200 active:bg-zinc-300 px-4 py-1 rounded-full" type="button">Follow</button>
+            </div>
+          </a>
+          <a href="connect.html" class="flex items-center px-4 py-2 duration-300 hover:bg-slate-600 rounded-b-xl text-sky-500">
+            Show more
+          </a>
+        </div>
+      </div>
+      <div id="other-link" class="mx-6 mb-4 text-zinc-400 text-sm">
+        <a class="hover:underline mr-3 mb-1 inline-block" href="#">Terms of Service</a>
+        <a class="hover:underline mr-3 mb-1 inline-block" href="#">Privacy Policy</a>
+        <a class="hover:underline mr-3 mb-1 inline-block" href="#">Cookie Policy</a>
+        <a class="hover:underline mr-3 mb-1 inline-block" href="#">Accessibility</a>
+        <a class="hover:underline mr-3 mb-1 inline-block" href="#">Ads Info</a>
+        <a class="hover:underline mr-3 mb-1 inline-block" href="#">More</a>
+        <a class="hover:underline mr-3 mb-1 inline-block" href="#">&copy; Cendra, Inc</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tweet Modal -->
+  <div id="tweet-modal" class="bg-black bg-opacity-70 w-full h-full absolute z-20 hidden">
+    <div class="ml-4 mt-4">
+      <button id="tweet-modal-exit" class="duration-300 p-3 rounded-full hover:bg-slate-700" title="Close">
+        <i class="fa-solid fa-x"></i>
+      </button>
+    </div>
+    <div class="border border-slate-600 p-4 rounded-md flex bg-slate-800 absolute left-2/4 -translate-x-2/4 mt-14 w-9/12 lg:w-5/12">
+      <div id="user-photo-profile" class="w-14 flex-shrink-0 mr-3">
+        <img class="rounded-full" src="/src/img/momo.jpg" alt="momo">
+      </div>
+      <form class="w-full">
+        <textarea class="bg-slate-800 block w-full mb-4 text-white focus:outline-none border-sky-500" type="text" name="tweet" placeholder="What's happening?"></textarea>
+        <button class="block bg-sky-500 duration-300 hover:bg-sky-600 px-4 py-2 rounded-full text-sky-50 font-semibold ml-auto" type="button">Tweet</button>
+      </form>
+    </div>
+  </div>
+  <!-- End of Tweet Modal -->
+
+  <!-- Explore Modal -->
+  <div id="explore-modal" class="bg-black bg-opacity-70 w-full h-full absolute z-20 hidden">
+    <div class="ml-4 mt-4">
+      <button id="explore-modal-exit" class="duration-300 p-3 rounded-full hover:bg-slate-700" title="Close">
+        <i class="fa-solid fa-x"></i>
+      </button>
+    </div>
+    <div id="cendra-trends" class="pt-4 h-screen overflow-y-auto flex-col md:w-5/12 mx-auto">
+      <div class="mx-6 flex items-baseline justify-center lg:justify-start mb-4 duration-300 p-4 bg-slate-700 rounded-full" title="Main">
+        <i class="fa-solid fa-search text-zinc-400 pr-4"></i>
+        <input id="search-button" type="text" class="bg-slate-700 w-full focus:outline-none text-white" placeholder="Search Twitter">
+      </div>
+      <div class="bg-slate-700 pt-4 mx-6 mb-4 rounded-xl">
+        <h2 class="text-xl font-bold mb-4 px-4">Your Trends</h2>
+        <div id="trend-list">
+          <a href="#" id="trend-item" class="block px-4 py-2 duration-300 hover:bg-slate-600">
+            <small class="text-zinc-400">1 · Trending</small>
+            <p class="font-bold">#NINEORNONE</p>
+            <small class="text-zinc-400">180K Tweets</small>
+          </a>
+          <a href="#" id="trend-item" class="block px-4 py-2 duration-300 hover:bg-slate-600">
+            <small class="text-zinc-400">2 · Trending</small>
+            <p class="font-bold">#namjoon</p>
+            <small class="text-zinc-400">180K Tweets</small>
+          </a>
+          <a href="#" id="trend-item" class="block px-4 py-2 duration-300 hover:bg-slate-600">
+            <small class="text-zinc-400">3 · Trending</small>
+            <p class="font-bold">#nayeon_pop</p>
+            <small class="text-zinc-400">180K Tweets</small>
+          </a>
+          <a href="#" id="trend-item" class="block px-4 py-2 duration-300 hover:bg-slate-600">
+            <small class="text-zinc-400">4 · Trending</small>
+            <p class="font-bold">#inyourarea</p>
+            <small class="text-zinc-400">180K Tweets</small>
+          </a>
+          <a href="#" class="flex items-center px-4 py-2 duration-300 hover:bg-slate-600 rounded-b-xl text-sky-500">
+            Show more
+          </a>
+        </div>
+      </div>
+      <div class="bg-slate-700 pt-4 mx-6 rounded-xl mb-4">
+        <h2 class="text-xl font-bold mb-4 px-4">Who to follow</h2>
+        <div id="follow-list">
+          <a href="#" id="follow-item" class="flex items-center px-4 py-2 duration-300 hover:bg-slate-600">
+            <div id="user-photo-profile" class="w-14 flex-shrink-0 mr-3">
+              <img class="rounded-full" src="/src/img/tzuyu.jpg" alt="mina">
+            </div>
+            <div class="user-name">
+              <p class="font-bold">Chou Tzuyu</p>
+              <small class="block text-zinc-400">@thinkaboutzu</small>
+            </div>
+            <div id="follow-button" class="ml-auto">
+              <button class="block font-bold duration-300 bg-white hover:bg-zinc-200 active:bg-zinc-300 px-4 py-1 rounded-full" type="button">Follow</button>
+            </div>
+          </a>
+          <a href="#" id="trend-item" class="flex items-center px-4 py-2 duration-300 hover:bg-slate-600">
+            <div id="user-photo-profile" class="w-14 flex-shrink-0 mr-3">
+              <img class="rounded-full" src="/src/img/nayeon.jpg" alt="mina">
+            </div>
+            <div class="user-name">
+              <p class="font-bold">Im Nayeon</p>
+              <small class="block text-zinc-400">@nayeonyny</small>
+            </div>
+            <div id="follow-button" class="ml-auto">
+              <button class="block font-bold duration-300 bg-white hover:bg-zinc-200 active:bg-zinc-300 px-4 py-1 rounded-full" type="button">Follow</button>
+            </div>
+          </a>
+          <a href="#" class="flex items-center px-4 py-2 duration-300 hover:bg-slate-600 rounded-b-xl text-sky-500">
+            Show more
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Explore Modal -->
+
+  <script>
+    const tweetModal = document.getElementById('tweet-modal');
+    const tweetModalExit = document.getElementById('tweet-modal-exit');
+    const tweetSidebarButton = document.getElementById('tweet-sidebar-button');
+    const tweetInput = document.getElementById('tweet-component').getElementsByTagName('textarea')[0];
+    const tweetInputFloated = tweetModal.getElementsByTagName('textarea')[0];
+    
+    const exploreModal = document.getElementById('explore-modal');
+    const exploreButton = document.getElementById('explore');
+    const exploreModalExit = document.getElementById('explore-modal-exit');
+
+    const searchButton = document.getElementById('search-button');
+
+    tweetSidebarButton.addEventListener('click', () => {
+      tweetModal.classList.remove('hidden');
+    });
+
+    tweetModalExit.addEventListener('click', () => {
+      tweetModal.classList.add('hidden');
+    });
+
+    tweetInput.addEventListener('focus', () => {
+      tweetInput.classList.add('border-b-2');
+    });
+    
+    tweetInputFloated.addEventListener('focus', () => {
+      tweetInputFloated.classList.add('border-b-2');
+    });
+
+    exploreButton.addEventListener('click', () => {
+      if (window.innerWidth < 1024) {
+        exploreModal.classList.remove('hidden');
+      } else {
+        searchButton.focus();
+      }
+    });
+    
+    exploreModalExit.addEventListener('click', () => {
+      exploreModal.classList.add('hidden');
+    });
+
+  </script>
+</body>
+</html>
