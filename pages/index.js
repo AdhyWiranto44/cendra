@@ -1,8 +1,12 @@
 import Script from 'next/script'
+import Footer from '../components/footer';
 import PhotoProfile from '../components/photoProfile';
 import RightBar from '../components/rightBar';
+import Searchbar from '../components/searchbar';
 import Sidebar from '../components/sidebar'
+import Trends from '../components/trends';
 import Tweet from '../components/tweet'
+import Users from '../components/users';
 
 export default function Home() {
   const tweets = [
@@ -62,7 +66,16 @@ export default function Home() {
         </div>
       </div>
 
-      <RightBar />
+      <RightBar
+        contents={
+          <>
+            <Searchbar />
+            <Trends />
+            <Users />
+            <Footer />
+          </>
+        }
+      />
 
       {/* <!-- Tweet Modal --> */}
       <div id="tweet-modal" className="bg-black bg-opacity-70 w-full h-full absolute z-20 hidden">

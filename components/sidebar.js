@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NavLink from "./navLink";
 import PhotoProfile from "./photoProfile";
 
@@ -64,14 +65,16 @@ export default function Sidebar() {
   return (
     <div className="container-fluid w-2/12 lg:w-3/12">
       <div id="cendra-sidebar" className="pt-4 border-r h-screen border-slate-600 overflow-y-auto flex-col justify-start">
-        <a className="text-2xl mx-4 lg:mx-14 flex items-baseline justify-center lg:justify-start mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" href="#" title="Main">
-          <i className="fa-solid fa-feather-pointed"></i>
-        </a>
+        <Link href="/">
+          <a className="text-2xl mx-4 lg:mx-14 flex items-baseline justify-center lg:justify-start mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" title="Main">
+            <i className="fa-solid fa-feather-pointed"></i>
+          </a>
+        </Link>
         {renderNavLink()}
         <button id="tweet-sidebar-button" className="text-2xl mx-auto lg:mx-14 flex items-baseline justify-center lg:justify-start mb-1 duration-300 p-3 bg-sky-500 rounded-full hover:bg-sky-600" href="#" title="Tweet">
           <i className="fa-solid fa-pencil mx-auto"></i>
         </button>
-        <a className="mx-auto lg:mx-14 flex mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" href="#" title="More">
+        <a className="mx-auto lg:mx-14 flex mb-1 duration-300 p-3 hover:bg-slate-700 hover:rounded-full" href="/profile" title="More">
           <div id="user-photo-profile" className="w-14 mx-auto lg:mx-0 lg:mr-3">
             <PhotoProfile
               src={`img/momo.jpg`}
