@@ -1,3 +1,4 @@
+import Link from "next/link"
 import User from "./user"
 
 export default function Users() {
@@ -32,9 +33,11 @@ export default function Users() {
       <h2 className="text-xl font-bold mb-4 px-4">Who to follow</h2>
       <div id="follow-list">
         {renderUser()}
-        <a href="/connect" className="flex items-center px-4 py-2 duration-300 hover:bg-slate-600 rounded-b-xl text-sky-500">
-          Show more
-        </a>
+        <Link href="/connect">
+          <a className="flex items-center px-4 py-2 duration-300 hover:bg-slate-600 rounded-b-xl text-sky-500">
+            Show more
+          </a>
+        </Link>
       </div>
     </div>
   )

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Trend from "./trend";
 
 export default function Trends() {
@@ -38,9 +39,11 @@ export default function Trends() {
       <h2 className="text-xl font-bold mb-4 px-4">Your Trends</h2>
       <div id="trend-list">
         {renderTrends()}
-        <a href="/explore" className="flex items-center px-4 py-2 duration-300 hover:bg-slate-600 rounded-b-xl text-sky-500">
-          Show more
-        </a>
+        <Link href="/explore">
+          <a className="flex items-center px-4 py-2 duration-300 hover:bg-slate-600 rounded-b-xl text-sky-500">
+            Show more
+          </a>
+        </Link>
       </div>
     </div>
   )
