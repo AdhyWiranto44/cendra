@@ -8,10 +8,10 @@ import Users from '../components/users'
 
 export default function Explore() {
   return (
-    <div class="bg-slate-800 flex">
+    <div className="bg-slate-800 flex">
       <Sidebar />
-      <div class="container-fluid h-screen overflow-y-auto w-full sm:w-10/12 lg:w-5/12">
-        <div id="cendra-trends" class="pt-4 border-l h-screen border-slate-600 overflow-y-auto flex-col">
+      <div className="container-fluid h-screen overflow-y-auto w-full sm:w-10/12 lg:w-5/12">
+        <div id="cendra-trends" className="pt-4 border-l h-screen border-slate-600 overflow-y-auto flex-col">
           <Searchbar />
           <Trends />
         </div>
